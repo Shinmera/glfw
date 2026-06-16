@@ -2255,7 +2255,7 @@ void _glfwSetCursorModeWin32(_GLFWwindow* window, int mode)
         updateCursorImage(window);
 }
 
-const char* _glfwGetScancodeNameWin32(int scancode)
+const char* _glfwGetScancodeNameWin32(int scancode, int modifiers)
 {
     if (scancode < 0 || scancode > (KF_EXTENDED | 0xff))
     {
