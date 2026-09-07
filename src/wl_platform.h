@@ -523,6 +523,7 @@ typedef struct _GLFWlibraryWayland
         xkb_mod_index_t         superIndex;
         xkb_mod_index_t         capsLockIndex;
         xkb_mod_index_t         numLockIndex;
+        xkb_mod_index_t         altGrIndex;
         unsigned int            modifiers;
 
         PFN_xkb_context_new context_new;

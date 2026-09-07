@@ -1909,6 +1909,7 @@ static void keyboardHandleKeymap(void* userData,
     _glfw.wl.xkb.superIndex    = xkb_keymap_mod_get_index(_glfw.wl.xkb.keymap, "Mod4");
     _glfw.wl.xkb.capsLockIndex = xkb_keymap_mod_get_index(_glfw.wl.xkb.keymap, "Lock");
     _glfw.wl.xkb.numLockIndex  = xkb_keymap_mod_get_index(_glfw.wl.xkb.keymap, "Mod2");
+    _glfw.wl.xkb.altGrIndex    = xkb_keymap_mod_get_index(_glfw.wl.xkb.keymap, "Mod3");
 }
 
 static void keyboardHandleEnter(void* userData,
@@ -2033,7 +2034,8 @@ static void keyboardHandleModifiers(void* userData,
         { _glfw.wl.xkb.shiftIndex,    GLFW_MOD_SHIFT },
         { _glfw.wl.xkb.superIndex,    GLFW_MOD_SUPER },
         { _glfw.wl.xkb.capsLockIndex, GLFW_MOD_CAPS_LOCK },
-        { _glfw.wl.xkb.numLockIndex,  GLFW_MOD_NUM_LOCK }
+        { _glfw.wl.xkb.numLockIndex,  GLFW_MOD_NUM_LOCK },
+        { _glfw.wl.xkb.altGrIndex,    GLFW_MOD_ALT_GR }
     };
 
     for (size_t i = 0; i < sizeof(modifiers) / sizeof(modifiers[0]); i++)
@@ -2996,6 +2998,8 @@ static xkb_mod_mask_t translateStateInverse(int mods)
     mask |= xkb_keymap_mod_get_mask2(_glfw.wl.xkb.keymap, _glfw.wl.xkb.capsLockIndex);
   if (mods & GLFW_MOD_NUM_LOCK)
     mask |= xkb_keymap_mod_get_mask2(_glfw.wl.xkb.keymap, _glfw.wl.xkb.numLockIndex);
+  if (mods & GLFW_MOD_ALT_GR)
+    mask |= xkb_keymap_mod_get_mask2(_glfw.wl.xkb.keymap, _glfw.wl.xkb.altGrIndex);
 
   return mask;
 }

@@ -47,7 +47,8 @@
                        GLFW_MOD_ALT | \
                        GLFW_MOD_SUPER | \
                        GLFW_MOD_CAPS_LOCK | \
-                       GLFW_MOD_NUM_LOCK)
+                       GLFW_MOD_NUM_LOCK | \
+                       GLFW_MOD_ALT_GR)
 
 // Initializes the platform joystick API if it has not been already
 //

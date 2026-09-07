@@ -560,6 +560,11 @@ extern "C" {
  *  GLFW_LOCK_KEY_MODS input mode is set.
  */
 #define GLFW_MOD_NUM_LOCK        0x0020
+  /*! @brief If this bit is set the Alt-Gr or right alt key were held down.
+   *
+   *  If this bit is set the Alt-Gr or right alt key were held down.
+   */
+#define GLFW_MOD_ALT_GR          0x0040
 
 /*! @} */
 

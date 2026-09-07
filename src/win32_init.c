@@ -525,6 +525,7 @@ void _glfwUpdateKeyNamesWin32(void)
             state[(int) VK_CONTROL] = (mods & GLFW_MOD_CONTROL)? 0xff : 0x00;
             state[(int) VK_MENU] = (mods & GLFW_MOD_ALT)? 0xff : 0x00;
             state[(int) VK_CAPITAL] = (mods & GLFW_MOD_CAPS_LOCK)? 0xff : 0x00;
+            state[(int) VK_RMENU] = (mods & GLFW_MOD_ALT_GR)? 0xff : 0x00;
 
             length = ToUnicode(vk, scancode, state,
                                chars, sizeof(chars) / sizeof(WCHAR),

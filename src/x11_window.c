@@ -229,6 +229,8 @@ static int translateState(int state)
         mods |= GLFW_MOD_CAPS_LOCK;
     if (state & Mod2Mask)
         mods |= GLFW_MOD_NUM_LOCK;
+    if (state & Mod3Mask)
+        mods |= GLFW_MOD_ALT_GR;
 
     return mods;
 }
@@ -251,6 +253,8 @@ static int translateStateInverse(int mods)
     state |= LockMask;
   if (mods & GLFW_MOD_NUM_LOCK)
     state |= Mod2Mask;
+  if (mods & GLFW_MOD_ALT_GR)
+    state |= Mod3Mask;
 
   return state;
 }

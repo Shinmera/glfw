@@ -419,6 +419,8 @@ static int getKeyMods(void)
         mods |= GLFW_MOD_CAPS_LOCK;
     if (GetKeyState(VK_NUMLOCK) & 1)
         mods |= GLFW_MOD_NUM_LOCK;
+    if (GetKeyState(VK_RMENU) & 1)
+        mods |= GLFW_MOD_ALT_GR;
 
     return mods;
 }
