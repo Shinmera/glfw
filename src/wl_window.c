@@ -3029,7 +3029,8 @@ const char* _glfwGetScancodeNameWayland(int scancode, int modifiers)
     }
 
     xkb_level_index_t found_level = 0;
-    if (0 < modifiers)
+    // Note: on older systems xkb_keymap_mod_get_mask2 is not available.
+    if (0 < modifiers && xkb_keymap_mod_get_mask2)
     {
         // Figure out the corresponding level set for the modifier set
         // that the user requested. This involves a relatively annoying
